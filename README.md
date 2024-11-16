@@ -1,36 +1,26 @@
-# 🌐 Calculadora de Suma
+# Calculadora de Estadísticas
 
-¡Bienvenido a **Calculadora de Suma**! 🎉 Este es un proyecto simple que permite a los usuarios sumar dos números ingresados en un formulario. La aplicación está construida con HTML, CSS y JavaScript.
+Este proyecto es una **Calculadora de Estadísticas** que permite a los usuarios calcular la media, mediana y desviación estándar de una lista de números ingresados. La aplicación tiene un frontend simple construido con HTML, CSS y JavaScript.
 
-## 📚 Tabla de Contenidos
+## Funcionalidades
 
-- [Características](#características)
-- [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
-- [Publicación en GitHub Pages](https://giselleulloa.github.io/calculadora-de-suma/)
+- Calcular la **media** de una lista de números.
+- Calcular la **mediana** de una lista de números.
+- Calcular la **desviación estándar** de una lista de números.
+- Interfaz de usuario amigable para ingresar datos y ver resultados.
 
-## 🚀 Características
+## Tecnologías Utilizadas
 
-- Interfaz de usuario sencilla y amigable. 😊
-- Validación de entradas para asegurar que solo se ingresen números. 🔢
-- Muestra el resultado de la suma o un mensaje de error si la entrada es inválida. ❌
+- HTML
+- CSS
+- JavaScript
 
-## 🛠️ Tecnologías Utilizadas
-
-- **HTML**: Para la estructura de la página. 🏗️
-- **CSS**: Para el diseño y estilo visual. 🎨
-- **JavaScript**: Para la lógica de la aplicación y la interacción con el usuario. 💻
-
-## 📥 Instalación
+## Instalación
 
 Para ejecutar este proyecto en tu máquina local, sigue estos pasos:
 
 1. **Clona el repositorio**:
    ```bash
-   git clone https://github.com/GiselleUlloa/calculadora-suma.git
-
-## GitHub Pages
+   git clone https://github.com/GiselleUlloao/calculadora-de-suma.git
+  ## GitHub Pages
 https://giselleulloa.github.io/calculadora-de-suma/
