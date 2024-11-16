@@ -1,34 +1,60 @@
-// Funciones
-
 /**
- * Suma dos números.
- * @param {number} a - Primer número.
- * @param {number} b - Segundo número.
- * @returns {number} - La suma de a y b.
- * @throws {Error} - Si los argumentos no son números.
+ * Función para calcular la media de una lista de números.
+ * @param {number[]} numeros - Lista de números.
+ * @returns {number} La media de la lista de números.
  */
-function suma(a, b) {
-  if (typeof a !== 'number' || typeof b !== 'number') {
-      throw new Error('Ambos argumentos deben ser números');
-  }
-  return a + b;
+function obtenerMedia(numeros) {
+  if (numeros.length === 0) return 0; // Validación para lista vacía
+  let total = numeros.reduce((acumulador, numero) => acumulador + numero, 0);
+  let media = total / numeros.length;
+  return media;
 }
 
-// Manejo del evento de clic en el botón
-document.getElementById('calculateBtn').addEventListener('click', function() {
-  const num1 = parseFloat(document.getElementById('num1').value);
-  const num2 = parseFloat(document.getElementById('num2').value);
-  const resultElement = document.getElementById('result');
-  const errorElement = document.getElementById('error');
-
-  // Limpiar resultados anteriores
-  resultElement.textContent = '';
-  errorElement.textContent = '';
-
-  try {
-      const result = suma(num1, num2);
-      resultElement.textContent = `Resultado: ${result}`;
-  } catch (error) {
-      errorElement.textContent = error.message;
+/**
+* Función para calcular la mediana de una lista de números.
+* @param {number[]} numeros - Lista de números.
+* @returns {number} La mediana de la lista de números.
+*/
+function obtenerMediana(numeros) {
+  let numerosOrdenados = numeros.slice().sort((a, b) => a - b);
+  let n = numerosOrdenados.length;
+  let mediana;
+  if (n % 2 === 0) {
+      mediana = (numerosOrdenados[n / 2 - 1] + numerosOrdenados[n / 2]) / 2;
+  } else {
+      mediana = numerosOrdenados[(n - 1) / 2];
   }
-});
+  return mediana;
+}
+
+/**
+* Función para calcular la desviación estándar de una lista de números.
+* @param {number[]} numeros - Lista de números.
+* @returns {number} La desviación estándar de la lista de números.
+*/
+function obtenerDesviacionEstandar(numeros) {
+  let media = obtenerMedia(numeros);
+  let desviaciones = numeros.map(numero => Math.pow(numero - media, 2));
+  let varianza = desviaciones.reduce((acumulador, desviacion) => acumulador + desviacion, 0) / numeros.length;
+  let desviacionEstandar = Math.sqrt(varianza);
+  return desviacionEstandar;
+}
+
+/**
+* Función para calcular las estadísticas y mostrar los resultados en el frontend.
+*/
+function calcularEstadisticas() {
+  const input = document.getElementById('numeros').value;
+  const numeros = input.split(',').map(num => parseFloat(num.trim())).filter(num => !isNaN(num));
+  
+  const media = obtenerMedia(numeros);
+  const mediana = obtenerMediana(numeros);
+  const desviacionEstandar = obtenerDesviacionEstandar(numeros);
+
+  document.getElementById('media').innerText = `Media: ${media}`;
+  document.getElementById('mediana').innerText = `Mediana: ${mediana}`;
+  document.getElementById('desviacionEstandar').innerText = `Desviación estándar: ${desviacionEstandar}`;
+}
+
+// Evento para el botón de calcular
+document.getElementById('calcular').addEventListener('click', calcularEstadisticas);
