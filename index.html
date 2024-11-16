@@ -3,26 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Proyecto Web</title>
-    <link rel="stylesheet" href="styless.css"> <!-- Enlace al archivo CSS -->
+    <title>Calculadora de Estadísticas</title>
+    <link rel="stylesheet" href="styless.css"> <!-- Enlace a CSS -->
 </head>
 <body>
-    <header>
-        <h1> calculadora de suma </h1>
-    </header>
-    <main>
-        <div>
-            <label for="num1">Número 1:</label>
-            <input type="text" id="num1" />
+    <div class="container">
+        <h1>Calculadora de Estadísticas</h1>
+        <label for="numeros">Ingresa una lista de números (separados por comas):</label>
+        <input type="text" id="numeros" placeholder="Ejemplo: 1, 2, 3, 4, 5">
+        <button id="calcular">Calcular Estadísticas</button>
+
+        <div id="resultados" class="resultados">
+            <h2>Resultados:</h2>
+            <p id="media"></p>
+            <p id="mediana"></p>
+            <p id="desviacionEstandar"></p>
         </div>
-        <div>
-            <label for="num2">Número 2:</label>
-            <input type="text" id="num2" />
-        </div>
-        <button id="calculateBtn">Calcular Suma</button>
-        <h2 id="result"></h2>
-        <h2 id="error" style="color: red;"></h2>
-    </main>
-    <script src="fuente01.js"></script> <!-- Enlace al archivo JS -->
+    </div>
+
+    <script src="fuente01.js"></script> <!-- Enlace a JavaScript -->
 </body>
 </html>
